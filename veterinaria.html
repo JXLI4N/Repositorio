@@ -1,47 +1,133 @@
 <html>
 <head>
+<meta charset="UTF-8">
     <title>Veterinaria Amigos Peludos</title>
     <style>
-        body { font-family: Arial; background: #f0f8ff; }
+        body { font-family: Arial; background: #f0f8ff; margin: 0; }
         header { background: #4b6cb7; color: white; padding: 20px; }
-        nav { display: flex; justify-content: space-around; }
-        section { margin: 20px; padding: 15px; background: white; }
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        nav { display: flex; justify-content: center; margin-top: 10px; }
+        section { margin: 20px; padding: 15px; background: white; display: none; }
+        .activo { display: block; }
+        .producto {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        .producto img {
+            width: 100px;
+            height: 100px;
+            margin-right: 15px;
+            object-fit: cover;
+        }
     </style>
 </head>
 <body>
     <header>
         <h1>Veterinaria Amigos Peludos</h1>
         <nav>
-            <a href="#inicio">Inicio</a>
-            <a href="#servicios">Servicios</a>
-            <a href="#contacto">Contacto</a>
+            <a onclick="mostrar('inicio')">Inicio</a>
+            <a onclick="mostrar('servicios')">Servicios</a>
+            <a onclick="mostrar('quienes')">Quiénes Somos</a>
+            <a onclick="mostrar('ubicacion')">Dónde Nos Ubicamos</a>
+            <a onclick="mostrar('catalogo')">Catálogo de Alimentos</a>
+            <a onclick="mostrar('contacto')">Contacto</a>
         </nav>
     </header>
 
-    <section id="inicio">
+    <section id="inicio" class="activo">
         <h2>Bienvenidos</h2>
         <p>Cuidamos a tus mascotas con amor y profesionalismo.</p>
-        <p>clinica veterinaria </p>
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRi5ad6KxF1qTPJUgXm-Rb1wCD2UxLgPD3QVOec3--yXbfcvCzDX0grPzYs&s=10" alt="Clinica veterinaria">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRi5ad6KxF1qTPJUgXm-Rb1wCD2UxLgPD3QVOec3--yXbfcvCzDX0grPzYs&s=10" alt="Clínica veterinaria">
     </section>
 
     <section id="servicios">
-        <h3>Nuestros Servicios</h2>
+        <h2>Nuestros Servicios</h2>
         <ul>
-            <li>Consultas medicas</li>
-            <li>Vacunacion</li>
-            <li>Cirugias</li>
+            <li>Consultas médicas</li>
+            <li>Vacunación</li>
+            <li>Cirugías</li>
+            <li>estética y peluquería</li>
+            <li>adiestramiento</li>
+            <li>urgencias las 2024</li>
         </ul>
+    </section>
+
+    <section id="quienes">
+        <h2>Quiénes Somos</h2>
+        <p>una fundación de veterinaria con mas de 5 años de experiencia con empleados calificados titulación y licencia.</p>
+    </section>
+
+    <section id="ubicacion">
+        <h2>Dónde Nos Ubicamos</h2>
+        <p>Nos encontramos en Calle Principal 123, Ciudad Mascota, México.</p>
+    </section>
+
+    <section id="catalogo">
+        <h2>Catálogo de Alimentos</h2>
+        <div class="producto">
+            <img src="https://http2.mlstatic.com/D_NQ_NP_676681-MLM50810282984_072022-O-pedigree-nutricion-completa-alimento-seco-para-perros-adulto.webp" alt="pedrigee">
+            <div>
+                <h3>pedrigree</h3>
+                <p>Alimento balanceado para perros adultos.</p>
+                <p>Precio: $350 MXN</p>
+            </div>
+        </div>
+        <div class="producto">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAQRLf0SOTHw9gxPIAwBqSWWG2LsHay3K9xw&s" alt="Alimento húmedo gatitos">
+            <div>
+                <h3>whiskas</h3>
+                <p>Ideal para gatitos en crecimiento.</p>
+                <p>Precio: $45 MXN</p>
+            </div>
+        </div>
+        <div class="producto">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSibGQK_14at0xXwZmsYqcSGLeUymmn35kdl0JgBVMeVr-mYqSDg1T_rYM&s=10" alt="Snack dental perros">
+            <div>
+                <h3>Snack Dental (dentastick)</h3>
+                <p>Ayuda a mantener sus dientes limpios y sanos.</p>
+                <p>Precio: $90 MXN</p>
+            </div>
+        </div>
+        <div class="producto">
+            <img src="https://http2.mlstatic.com/D_NQ_NP_928230-MLM53238763976_012023-O-collar-isabelino-en-forma-de-dona-para-gato-y-perro-pequeno.webp" alt="Croquetas cachorros">
+            <div>
+                <h3>anillo en forma de dona para perros y gatos pequeños</h3>
+                <p>forma flexible y suave para mascotas</p>
+                <p>Precio: $280 MXN</p>
+            </div>
+        </div>
+        <div class="producto">
+            <img src="https://http2.mlstatic.com/D_NQ_NP_867249-MLA84857651833_052025-O.webp" alt="Galletas para gatos">
+            <div>
+                <h3>plato de acero inoxidable para perros o gatos</h3>
+                <p>acero inoxidable facil de lavar/.</p>
+                <p>Precio: $60 MXN</p>
+            </div>
+        </div>
     </section>
 
     <section id="contacto">
         <h2>Contacto</h2>
-        <p>Telefono: +52 6621130559</p>
-        <p>Direccion: Calle Principal 123</p>
+        <p>Teléfono: +52 6621130559</p>
+        <p>Nombre: Julian</p>
     </section>
 
     <footer>
         <p>&copy; 2025 Veterinaria Amigos Peludos</p>
     </footer>
+
+    <script>
+        function mostrar(id) {
+            const secciones = document.querySelectorAll('section');
+            secciones.forEach(sec => sec.classList.remove('activo'));
+            document.getElementById(id).classList.add('activo');
+        }
+    </script>
 </body>
 </html>
