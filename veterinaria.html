@@ -4,9 +4,9 @@
     <title>Veterinaria Amigos Peludos</title>
     <style>
         body { font-family: Arial; background: #f0f8ff; margin: 0; }
-        header { background: #4b6cb7; color: white; padding: 20px; }
+        header { background: #4b6cb7; color: white; padding: 40px; display: flex; justify-content: space-between; align-items: center; }
         nav a {
-            color: white;
+            color: black;
             margin: 0 15px;
             text-decoration: none;
             cursor: pointer;
@@ -25,20 +25,29 @@
             margin-right: 15px;
             object-fit: cover;
         }
+        button {
+            background-color: #ffcc00;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 30px;
+        }
     </style>
 </head>
 <body>
     <header>
         <h1>Veterinaria Amigos Peludos</h1>
-        <nav>
-            <a onclick="mostrar('inicio')">Inicio</a>
-            <a onclick="mostrar('servicios')">Servicios</a>
-            <a onclick="mostrar('quienes')">Quiénes Somos</a>
-            <a onclick="mostrar('ubicacion')">Dónde Nos Ubicamos</a>
-            <a onclick="mostrar('catalogo')">Catálogo de Alimentos</a>
-            <a onclick="mostrar('contacto')">Contacto</a>
-        </nav>
+        <button onclick="cambiarFuente()">Cambiar Fuente</button>
     </header>
+    <nav>
+        <a onclick="mostrar('inicio')">Inicio</a>
+        <a onclick="mostrar('servicios')">Servicios</a>
+        <a onclick="mostrar('quienes')">Quiénes Somos</a>
+        <a onclick="mostrar('ubicacion')">Dónde Nos Ubicamos</a>
+        <a onclick="mostrar('catalogo')">Catálogo de Alimentos</a>
+        <a onclick="mostrar('contacto')">Contacto</a>
+    </nav>
 
     <section id="inicio" class="activo">
         <h2>Bienvenidos</h2>
@@ -127,6 +136,16 @@
             const secciones = document.querySelectorAll('section');
             secciones.forEach(sec => sec.classList.remove('activo'));
             document.getElementById(id).classList.add('activo');
+        }
+
+        function cambiarFuente() {
+            const fuentes = ["Arial", "Verdana", "Georgia", "Courier New", "Comic Sans MS"];
+            const body = document.body;
+            const fuenteActual = window.getComputedStyle(body).fontFamily.replace(/['"]/g, '');
+            let indice = fuentes.indexOf(fuenteActual);
+            if (indice === -1) indice = 0;
+            const nuevaFuente = fuentes[(indice + 1) % fuentes.length];
+            body.style.fontFamily = nuevaFuente;
         }
     </script>
 </body>
