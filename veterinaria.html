@@ -31,7 +31,7 @@
             padding: 10px 20px;
             border-radius: 5px;
             cursor: pointer;
-            font-size: 30px;
+            font-size: 20px;
         }
     </style>
 </head>
@@ -40,7 +40,8 @@
         <h1>Veterinaria Amigos Peludos</h1>
         <button onclick="cambiarFuente()">Cambiar Fuente</button>
     </header>
-    <nav>
+
+    <nav id="barraNavegacion">
         <a onclick="mostrar('inicio')">Inicio</a>
         <a onclick="mostrar('servicios')">Servicios</a>
         <a onclick="mostrar('quienes')">Quiénes Somos</a>
@@ -48,6 +49,10 @@
         <a onclick="mostrar('catalogo')">Catálogo de Alimentos</a>
         <a onclick="mostrar('contacto')">Contacto</a>
     </nav>
+
+    <div style="text-align: center; margin: 10px;">
+        <button onclick="toggleNavegacion()">Mostrar/Ocultar Navegación</button>
+    </div>
 
     <section id="inicio" class="activo">
         <h2>Bienvenidos</h2>
@@ -61,15 +66,15 @@
             <li>Consultas médicas</li>
             <li>Vacunación</li>
             <li>Cirugías</li>
-            <li>estética y peluquería</li>
-            <li>adiestramiento</li>
-            <li>urgencias las 2024</li>
+            <li>Estética y peluquería</li>
+            <li>Adiestramiento</li>
+            <li>Urgencias las 24 hrs</li>
         </ul>
     </section>
 
     <section id="quienes">
         <h2>Quiénes Somos</h2>
-        <p>una fundación de veterinaria con mas de 5 años de experiencia con empleados calificados titulación y licencia.</p>
+        <p>Una fundación veterinaria con más de 5 años de experiencia, con empleados calificados, titulados y con licencia profesional.</p>
     </section>
 
     <section id="ubicacion">
@@ -80,43 +85,11 @@
     <section id="catalogo">
         <h2>Catálogo de Alimentos</h2>
         <div class="producto">
-            <img src="https://http2.mlstatic.com/D_NQ_NP_676681-MLM50810282984_072022-O-pedigree-nutricion-completa-alimento-seco-para-perros-adulto.webp" alt="pedrigee">
+            <img src="https://http2.mlstatic.com/D_NQ_NP_676681-MLM50810282984_072022-O-pedigree-nutricion-completa-alimento-seco-para-perros-adulto.webp" alt="pedrigree">
             <div>
-                <h3>pedrigree</h3>
+                <h3>Pedigree</h3>
                 <p>Alimento balanceado para perros adultos.</p>
                 <p>Precio: $350 MXN</p>
-            </div>
-        </div>
-        <div class="producto">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAQRLf0SOTHw9gxPIAwBqSWWG2LsHay3K9xw&s" alt="Alimento húmedo gatitos">
-            <div>
-                <h3>whiskas</h3>
-                <p>Ideal para gatitos en crecimiento.</p>
-                <p>Precio: $45 MXN</p>
-            </div>
-        </div>
-        <div class="producto">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSibGQK_14at0xXwZmsYqcSGLeUymmn35kdl0JgBVMeVr-mYqSDg1T_rYM&s=10" alt="Snack dental perros">
-            <div>
-                <h3>Snack Dental (dentastick)</h3>
-                <p>Ayuda a mantener sus dientes limpios y sanos.</p>
-                <p>Precio: $90 MXN</p>
-            </div>
-        </div>
-        <div class="producto">
-            <img src="https://http2.mlstatic.com/D_NQ_NP_928230-MLM53238763976_012023-O-collar-isabelino-en-forma-de-dona-para-gato-y-perro-pequeno.webp" alt="Croquetas cachorros">
-            <div>
-                <h3>anillo en forma de dona para perros y gatos pequeños</h3>
-                <p>forma flexible y suave para mascotas</p>
-                <p>Precio: $280 MXN</p>
-            </div>
-        </div>
-        <div class="producto">
-            <img src="https://http2.mlstatic.com/D_NQ_NP_867249-MLA84857651833_052025-O.webp" alt="Galletas para gatos">
-            <div>
-                <h3>plato de acero inoxidable para perros o gatos</h3>
-                <p>acero inoxidable facil de lavar/.</p>
-                <p>Precio: $60 MXN</p>
             </div>
         </div>
     </section>
@@ -146,6 +119,15 @@
             if (indice === -1) indice = 0;
             const nuevaFuente = fuentes[(indice + 1) % fuentes.length];
             body.style.fontFamily = nuevaFuente;
+        }
+
+        function toggleNavegacion() {
+            const nav = document.getElementById('barraNavegacion');
+            if (nav.style.display === 'none') {
+                nav.style.display = 'flex';
+            } else {
+                nav.style.display = 'none';
+            }
         }
     </script>
 </body>
